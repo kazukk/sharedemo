@@ -2,31 +2,25 @@
 
 <h1>Listing Listings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Availability</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <% @listings.each do |listing| %>
+    <div class="col-md-3">
+      <div class="thumbnail">
 
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.name %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.price %></td>
-        <td><%= listing.availability %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <%= link_to image_tag(listing.image_url), listing_path(listing) %>
+
+        <div class="caption text-center">
+          <h3><%= listing.name %></h3>
+          <p><%= number_to_currency(listing.price, precision: 1) %></p>
+           <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-primary btn-block" %>
+          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning btn-block" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
 
 <br>
 

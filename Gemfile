@@ -45,6 +45,7 @@ gem "font-awesome-rails"
 
 gem 'devise'
 
+gem 'responsive_images'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

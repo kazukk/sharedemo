@@ -11,21 +11,42 @@
       <a class="navbar-brand" href="/listings/"><i class="fa fa-exchange"></i>SHARIENDS</a>
     </div>
 
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
      
+      <ul class="nav navbar-nav navbar-left">
+
+        <li><%= link_to "About", pages_about_path %> </li>
+        <li><%= link_to "Home", pages_home_path %> </li>
+</ul>
+
       <ul class="nav navbar-nav navbar-right">
+
+
                 <% if current_user %>
-                <li><%= link_to "Setting", edit_user_registration_path %> </li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>
+                                
+                <li>
+                <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                       <%= current_user.name %>
+                      <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+
+                                    <li><%= link_to "Setting", edit_user_registration_path %> </li>
+                                    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>
+                     </ul>
+
+                </div>
+                </li>
+
                 <% else %>
                 <li><%= link_to "Sign-up", new_user_registration_path %> </li>
                 <li><%= link_to "Log-in", new_user_session_path %> </li>
                  <% end %> 
 
-        <li><%= link_to "About", pages_about_path %> </li>
-        <li><%= link_to "Home", pages_home_path %> </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
@@ -19,8 +19,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 gem 'carrierwave'
@@ -39,6 +37,8 @@ group :development, :test do
 end
 
 
+
+
 gem "mini_magick"
 
 gem "font-awesome-rails"
@@ -55,6 +55,11 @@ gem 'responsive_images'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

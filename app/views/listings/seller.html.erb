@@ -5,13 +5,13 @@
   <% @listings.each do |listing| %>
     <div class="col-md-3">
       <div class="thumbnail">
+
         <%= link_to image_tag(listing.image_url(:thumb)), listing_path(listing) %>
 
         <div class="caption text-center">
           <h3><%= listing.name %></h3>
-
           <p><%= number_to_currency(listing.price, precision: 1) %></p>
-          <h5> <%= "Sold by #{listing.user.name} - posted #{time_ago_in_words(listing.created_at)}" %> </h5>
+          <h5> <%= "Sold by #{listing.user.name}" %> </h5>
          
                <% if (user_signed_in?) && (current_user == listing.user) %>
               <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-primary" %>

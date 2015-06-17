@@ -5,8 +5,12 @@
   <p>Nullam placerat neque orci, quis sollicitudin nulla consequat ut. Proin ac accumsan ante. Aliquam mattis mauris quis nunc ultrices cursus. Duis ipsum arcu, feugiat et sem eget, feugiat eleifend mi. Morbi efficitur dapibus quam, rhoncus tristique odio fermentum vitae. Fusce lacus nisl, semper quis gravida id, tristique sit amet orci.</p>
   <p>
   	<div class= "center">
+  		<% if user_signed_in? %>
+  	<%= link_to "Seller page", seller_path,  class: "btn btn-primary btn-lg" %>	
+  		<% else %>
   	<%= link_to "Sign up", new_user_registration_path,  class: "btn btn-primary btn-lg" %>
   	<%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+<% end %>
 </div>
 </div>
 </div>

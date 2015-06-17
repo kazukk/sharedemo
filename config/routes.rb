@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'pages/about'
 
   get 'pages/contact'
-
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
+  get 'dashboard' => "orders#dashboard"
   get 'pages/home'
   get 'seller' => "listings#seller"
 

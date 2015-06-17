@@ -4,6 +4,22 @@ class OrdersController < ApplicationController
 
   # GET /orders
   # GET /orders.json
+
+  def sales
+    @orders = Order.all.where(seller: current_user).order("created_at DESC")
+  end
+
+  def purchases
+    @orders = Order.all.where(buyer: current_user).order("created_at DESC")
+  end
+
+  def dashboard
+    @orders = Order.all.where(seller: current_user).order("created_at DESC")
+    @purchases = Order.all.where(buyer: current_user).order("created_at DESC")
+  end
+
+
+
   def index
     @orders = Order.all
    end

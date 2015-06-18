@@ -27,6 +27,8 @@ gem "fog"
 gem "figaro"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem 'chartkick'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -37,6 +39,7 @@ group :development, :test do
 end
 
 
+gem 'by_star', :git => "git://github.com/radar/by_star"
 
 
 gem "mini_magick"

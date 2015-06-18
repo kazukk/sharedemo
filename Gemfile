@@ -40,7 +40,7 @@ end
 
 
 gem 'by_star', :git => "git://github.com/radar/by_star"
-
+gem 'groupdate'
 
 gem "mini_magick"
 

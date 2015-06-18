@@ -1,7 +1,9 @@
 class TransactionsController < ApplicationController
 
 def new
+ @listings = Listing.all
 end
+
 
 def create
   # Amount in cents

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617034733) do
+ActiveRecord::Schema.define(version: 20150618010739) do
 
   create_table "listings", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150617034733) do
     t.integer  "listing_id"
     t.integer  "buyer_id"
     t.integer  "seller_id"
+    t.string   "guid"
   end
 
   create_table "users", force: :cascade do |t|

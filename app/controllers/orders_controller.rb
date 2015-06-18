@@ -20,8 +20,9 @@ class OrdersController < ApplicationController
 
     @listings =  Listing.all.where(seller: current_user).order("created_at DESC")
     @orders_num = @orders.group('date(created_at)').count   
-    @orders_amount = @listings.group('date(created_at)')
-    
+    orders_amount = @listings.group('date(created_at)')
+
+
   end
 
 

@@ -25,8 +25,7 @@ gem 'carrierwave'
 
 gem "fog"
 gem "figaro"
-gem 'stripe'
-
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :production do
   gem 'pg'

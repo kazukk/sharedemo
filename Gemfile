@@ -25,6 +25,7 @@ gem 'carrierwave'
 
 gem "fog"
 gem "figaro"
+gem 'stripe'
 
 
 group :production do
@@ -36,7 +37,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'stripe'
 
 
 

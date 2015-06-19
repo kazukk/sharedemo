@@ -40,6 +40,8 @@ end
 
 
 gem 'by_star', :git => "git://github.com/radar/by_star"
+
+gem 'tzinfo', '~> 1.2.2'
 gem 'groupdate'
 
 gem "mini_magick"

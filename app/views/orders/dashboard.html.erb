@@ -14,6 +14,7 @@
   { name: "購入額", data: @purchases_amount }
 ] %>
 
+<br>
 
   <table class="table table-striped table-bordered">
     <tr>
@@ -44,10 +45,11 @@
   { name: "販売額", data: @orders_amount }
 ] %>
 
-
+<br>
 
   <table class="table table-striped table-bordered">
     <tr>
+      <th class="center"> Regerence # </th>
       <th class="center">Item name</th>
       <th class="center">Price</th>
       <th class="center">Buyer name</th>
@@ -56,6 +58,7 @@
 
   <% @orders.each do |order| %>
       <tr>
+        <td><%= order.id %></td>
         <td><%= link_to order.listing.name, listing_path(order.listing) %></td>
         <td><%= number_to_currency(order.listing.price) %></td>
         <td><%= order.buyer.name %></td>

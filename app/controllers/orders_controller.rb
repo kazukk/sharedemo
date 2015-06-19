@@ -15,14 +15,14 @@ class OrdersController < ApplicationController
 
   def dashboard
     @purchases = Order.all.where(buyer: current_user).order("created_at DESC")
-    @purchases_num = @purchases.group('date(orders.created_at)').count   
-    @purchases_amount = @purchases.group('date(orders.created_at)').sum(:price)
+    @purchases_num = @purchases.group('date(created_at)').count   
+    @purchases_amount = @purchases.group('date(created_at)').sum(:price)
 
 
 
     @orders = Order.all.where(seller: current_user).order("created_at DESC")    
-    @orders_num = @orders.group('date(orders.created_at)').count   
-    @orders_amount = @orders.group('date(orders.created_at)').sum(:price)
+    @orders_num = @orders.group('date(created_at)').count   
+    @orders_amount = @orders.group('date(created_at)').sum(:price)
 
 
   end

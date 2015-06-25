@@ -51,11 +51,14 @@ class OrdersController < ApplicationController
     @order.buyer_id = current_user.id
     @order.price = @listing.price
 
-   
 
 
     respond_to do |format|
       if @order.save
+
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.welcome_email(@seller).deliver_later
+
         #format.html { redirect_to root_url, notice: 'Order was successfully created.' }
         format.html { redirect_to new_transaction_path, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }

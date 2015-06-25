@@ -29,6 +29,16 @@
   <div class="form-group">
     <%= f.submit "Sign up", class: "btn btn-primary" %>
   </div>
+
+<%= link_to "auth/facebook", class: "btn btn-social btn-facebook btn-lg" do %>
+  <i class= "fa fa-facebook"></i> Sign in with Facebook 
+  <% end %>
+<br>
+
+
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
+
+
 </div>
 <% end %>
 

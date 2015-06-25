@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   resources :transactions
   resources :listings do
   resources :orders, only: [:new, :create]  
-end  
+  end  
 
+  get 'auth/facebook/callback', to: "sessions#create"
 
   get 'pages/about'
 
@@ -14,6 +16,8 @@ end
   get 'dashboard' => "orders#dashboard"
   get 'pages/home'
   get 'seller' => "listings#seller"
+
+ get 'get_info', to: 'books#get_info', path: "/books/new/get_info"
 
   root 'listings#index'
 

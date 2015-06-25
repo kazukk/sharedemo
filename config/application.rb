@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'amazon/ecs' # 追記
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,4 +25,5 @@ module Sharedemo
     config.active_record.raise_in_transactional_callbacks = true
   end 
 end
+
 

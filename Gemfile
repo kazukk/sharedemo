@@ -52,6 +52,17 @@ gem 'devise'
 
 gem 'responsive_images'
 
+gem 'mail'
+
+gem 'sendgrid'
+
+gem 'amazon-ecs'
+
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

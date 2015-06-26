@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   resources :transactions
   resources :listings do
   resources :orders, only: [:new, :create]  
   end  
 
-  get 'auth/facebook/callback', to: "sessions#create"
+  get 'users/auth/facebook/callback', to: "sessions#create"
+  get 'users/auth/facebook/signout', to: "sessions#destroy"
+
 
   get 'pages/about'
 

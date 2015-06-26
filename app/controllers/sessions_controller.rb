@@ -1,17 +1,19 @@
 class SessionsController < ApplicationController
 
+
+
 def create
-	auth = request.env["omiauth.auth"]
-	session[:omiauth] = auth
-	user = User.sign_in_from_facebook(auth)
-	session[:users_id] = user.users_id
-	redirected_to root_url, notice: "Signed In"
+	auth = request.env['omniauth.auth']
+	session[:omniauth] = auth
+	@user = User.sign_in_from_facebook(auth)
+	session[:user_id] = @user.id
+	redirect_to root_url, notice: "Signed In"
 end
 
 def destroy
-session[:user_id] = nil
-session[:omiauth] = nil
-	redirected_to root_url, notice: "Signed Out"
+	session[:user_id] = nil
+	session[:omniauth] = nil
+	redirect_to root_url, notice: "Signed Out"
 
 end
 
